@@ -1,0 +1,21 @@
+<h1>Welcome to Tech Talent Store</h1>
+<p>Don't you want to buy some things? It might make you feel more complete...</p>
+
+<div class="row">
+	<% @products.each do |product| %>
+		<div class="col-md-4">
+			<div class="card card-body bg-light">
+				<% if product.image.url %>
+					<p><%= image_tag product.image.url, class: "storefront-pics" %></p>
+				<% end %>
+				<h3><%= link_to product.name, product %></h3>
+				<p><%= number_to_currency product.price %></p>
+				<p>
+					<a href="#">
+						<i class="fas fa-plus"></i> Quick Info
+					</a>
+				</p>
+			</div>
+		</div>
+	<% end %>
+</div>
