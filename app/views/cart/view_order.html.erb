@@ -1,2 +1,22 @@
-<h1>Cart#view_order</h1>
-<p>Find me in app/views/cart/view_order.html.erb</p>
+<h2>My Cart</h2>
+
+<table>
+	<tr>
+		<th>Product Name</th>
+		<th>Product Price</th>
+		<th>Quantity</th>
+		<th>Subtotal</th>
+	</tr>
+	<% @line_items.each do |line_item| %>
+		<tr>
+			<td><%= line_item.product.name %></td>
+			<td><%= number_to_currency line_item.product.price %></td>
+			<td>Qty:<%= line_item.quantity %></td>
+			<td>Subtotal: <%= number_to_currency line_item.line_item_total %></td>
+		</tr>
+	<% end %>
+</table>
+
+<div>
+	<%= link_to "Proceed to Checkout?", checkout_path, class: "btn btn-success" %>
+</div>

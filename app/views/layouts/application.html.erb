@@ -39,11 +39,14 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to"View Cart", view_order_path %></li>
+        </ul>
           <div class="nav-item dropdown float-right">
           <% if user_signed_in? %>
              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
              </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#"><%= link_to "Edit Profile", edit_user_registration_path %></a>
             <a class="dropdown-item" href="#"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
           </div>
